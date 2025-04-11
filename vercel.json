@@ -11,5 +11,13 @@
       "src": "/config.js",
       "dest": "/_config.js"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "PUBLIC_TOKEN": "@public_token" // Referencia a tu variable en Vercel
+    },
+    "commands": [
+      "echo 'window.__ENV__ = { PUBLIC_TOKEN: \"'$PUBLIC_TOKEN'\" };' > public/_config.js"
+    ]
+  }
 }
