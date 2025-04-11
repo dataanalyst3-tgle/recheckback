@@ -1,0 +1,471 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e9ecef;
+  text-align: center;
+  margin: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+h1 {
+  color: #005f73;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.sala-total {
+  background-color: #005f73;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 0 15px 0;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sala-total .total-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.sala-total .total-value {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.actions-and-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.update-time {
+  font-size: 0.75rem;
+  color: #777;
+  margin-right: 10px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-group h3 {
+  font-size: 0.75rem;
+  color: #005f73;
+  margin-bottom: 5px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  flex: 1 1 calc(20% - 5px);
+  max-width: 120px;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+}
+
+.clear-filter {
+  background-color: #005f73;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.clear-filter:hover {
+  background-color: #94d2bd;
+}
+
+button {
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #005f73;
+  transform: translateY(-2px);
+}
+
+/* Summary Cards más pequeñas */
+.summary-cards {
+  margin-top: 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  min-width: 180px;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card h2 {
+  color: #005f73;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.summary-card .total {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #0a9396;
+  margin: 10px 0;
+}
+
+.btn-detalles {
+  display: inline-block;
+  background-color: #0a9396;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.btn-detalles:hover {
+  background-color: #005f73;
+  transform: translateY(-2px);
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #0a9396;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+
+.btn-volver:hover {
+  color: #005f73;
+  text-decoration: underline;
+}
+
+/* Tabla con texto a 11px (0.6875rem) */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  table-layout: auto;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.6875rem; /* 11px */
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+th {
+  background-color: #005f73;
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+/* Columnas fijas */
+th:nth-last-child(3),
+td:nth-last-child(3) {
+  position: -webkit-sticky;
+  position: sticky;
+  right: 200px;
+  background-color: #005f73;
+  color: white;
+  z-index: 1;
+  width: auto;
+  min-width: 100px;
+}
+
+th:nth-last-child(2),
+td:nth-last-child(2) {
+  position: -webkit-sticky;
+  position: sticky;
+  right: 100px;
+  background-color: #005f73;
+  color: white;
+  z-index: 2;
+  width: auto;
+  min-width: 100px;
+}
+
+th:last-child,
+td:last-child {
+  position: -webkit-sticky;
+  position: sticky;
+  right: 0;
+  background-color: #005f73;
+  color: white;
+  z-index: 3;
+  width: auto;
+  min-width: 100px;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Botón para subir */
+.btn-subir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-subir:hover {
+  background-color: #94d2bd;
+  transform: scale(1.1);
+}
+
+/* Loader */
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #0a9396;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.summary-card .btn-volver {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #005f73;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+}
+
+.summary-card .btn-volver:hover {
+  background-color: #003d4d;
+}
+
+.cards-container.individual {
+  grid-template-columns: 1fr;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Estilos para botones de filtro activos */
+.filter-buttons button.active {
+    background-color: #005f73 !important;
+    font-weight: bold;
+    box-shadow: 0 0 0 2px white;
+    transform: translateY(-1px);
+}
+
+/* Asegurar que los botones mantengan el hover incluso cuando están activos */
+.filter-buttons button.active:hover {
+    background-color: #003d4d !important;
+}
+
+/* Transición suave para los cambios de estado */
+.filter-buttons button {
+    transition: all 0.2s ease;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+
+  .actions-and-filters {
+      flex-direction: column;
+  }
+
+  .filter-buttons button {
+      flex: 1 1 calc(50% - 5px);
+      max-width: none;
+      padding: 8px 5px;
+      font-size: 0.75rem;
+  }
+
+  .clear-filter {
+      width: 100%;
+  }
+
+  .cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+  }
+
+  .summary-card {
+      padding: 12px;
+      min-width: 150px;
+  }
+
+  .summary-card .total {
+      font-size: 1.5rem;
+  }
+
+  .table-container {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 0;
+  }
+
+  table {
+    min-width: 100%;
+  }
+
+  th, td {
+      padding: 8px;
+      font-size: 0.6875rem; /* Mantiene 11px en tablet */
+  }
+
+  th:nth-last-child(3),
+  td:nth-last-child(3) {
+      right: 160px;
+      min-width: 80px;
+  }
+
+  th:nth-last-child(2),
+  td:nth-last-child(2) {
+      right: 80px;
+      min-width: 80px;
+  }
+
+  th:last-child,
+  td:last-child {
+      right: 0;
+      min-width: 80px;
+  }
+
+  .btn-subir {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+      bottom: 15px;
+      right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons button {
+      flex: 1 1 100%;
+  }
+
+  th, td {
+      padding: 6px;
+      font-size: 0.6875rem; /* Mantiene 11px en móvil */
+  }
+
+  th:nth-last-child(3),
+  td:nth-last-child(3) {
+      right: 120px;
+      min-width: 70px;
+  }
+
+  th:nth-last-child(2),
+  td:nth-last-child(2) {
+      right: 60px;
+      min-width: 70px;
+  }
+
+  th:last-child,
+  td:last-child {
+      min-width: 70px;
+  }
+}

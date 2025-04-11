@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recheck-in - TGLE</title>
+    <link rel="icon" type="image/x-icon" href="../img/TGLE_logo.ico">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sala TGLE</h1>
+        
+        <!-- Mostrar total de pasajeros -->
+        <div class="sala-total" id="salaTotal">
+            <span class="total-label">Total pasajeros:</span>
+            <span class="total-value">0</span>
+        </div>
+        
+        <!-- Botón para volver al resumen -->
+        <a href="../index.html" class="btn-volver">← Volver al resumen</a>
+        
+        <!-- Sección de acciones y filtros -->
+        <section class="actions-and-filters">
+            <div class="actions">
+                <p class="update-time" id="horaActualizacion">Última actualización: Nunca | </p>
+                <button id="btnCargar">Cargar datos</button>
+                <button id="btnActualizar">↻</button>
+            </div>
+
+            <div class="filter">
+                <div class="filter-group">
+                    <h3>Filtrar por Estado</h3>
+                    <div class="filter-buttons">
+                        <button onclick="filtrarPorEstado('excedido')">Tiempo Excedido</button>
+                        <button onclick="filtrarPorEstado('recheck')">Recheck-in</button>
+                        <button class="clear-filter" id="btnLimpiarFiltro">Limpiar Filtro</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de la tabla -->
+        <section class="report">
+            <div class="table-container">
+                <table id="tablaExcel">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Botón para subir -->
+    <button id="btnSubir" class="btn-subir">↑</button>
+    
+    <script src="../script.js"></script>
+</body>
+</html>
