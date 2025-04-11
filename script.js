@@ -30,7 +30,7 @@ const cargarExcel = async () => {
     mostrarCargando(true);
     try {
         const fechaHoy = obtenerFechaHoy();
-        const token = process.env.API_TOKEN;
+        const token = window.__ENV__.PUBLIC_TOKEN;
         const url = `https://back.tgle.mx/api/check_ins/billing_report?from=${fechaHoy}%2000:00:00&to=${fechaHoy}%2023:59:59&token=${token}`;
 
         const response = await fetch(url);
