@@ -1,1 +1,5 @@
+# .gitignore
 node_modules/
+.env            # ← Esta línea es clave
+.env.local
+*.env
