@@ -30,7 +30,7 @@ const cargarExcel = async () => {
     mostrarCargando(true);
     try {
         const fechaHoy = obtenerFechaHoy();
-        const token = window.__ENV__.PUBLIC_TOKEN;
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDQ2NjI3MDMsImV4cCI6MTc0NDgwMjcwMywicm9sZXMiOltdLCJ1c2VybmFtZSI6IjEzOTMifQ.pxleEdk5u6aKUId0aeIKoC9C5jfvGMayNKrSuOw6l6l1RMN485E4CYsv7zOPnXSTtLV10Ql7iLIGrNG0hBboyJ_bcz0rWBgK5AP7BN_oaVOljz88XyhJ7wxtoBp1oL5rKDKdJ0fSbbIU-2GRDGlyUZ3Mfacyt8EwQlOkMmo2jSSpXzdYZeeJvlY3OfsGNncQW5nZ7df_2Kr3ATtJAtcqa8XKO2qM7azzFHbWR6DQghitdpdtXX8FjEZ6FFQ7bBurVHOWTaTHQGcuntcn2X_V6YpvhwkZZWKzXnaA68QLVmXEP9rV40DQomcYYYbBEZaVwE1hsr2XDtJWFJRXfzJ5sB8ekjNB8P9JqJXU3DUEg6hekfvSXnznsRCY2cuf7GjkBNjkVk413oYOMrMqfkdAKc80vxpfQy46hajdywTRow_S4uzlQ-XEBaxv94l1rEiKBwXktZ3YAgpw1Aj2cxx6QLAYAyvgQHUm5AKv9p1ifTBPkC3nBMgCHOTs1rrgWkOP8Ldig3dS2CspwHBi_elegSn9KhKGcdjPjPdl2QkjK-DFO18c6fKWPOMX4uAb8_DrpIjlsLtqUXRzbTmyEooR0qvFOw_p_H7CHn8aLwdol4yNFxrtuM0ipLha_tZ9aQSZuSMtm134V9dlBnopPetr6bH7k2_m3yDHKBGxsyKk03w";  // Reemplaza con tu token real
         const url = `https://back.tgle.mx/api/check_ins/billing_report?from=${fechaHoy}%2000:00:00&to=${fechaHoy}%2023:59:59&token=${token}`;
 
         const response = await fetch(url);
